@@ -1,0 +1,59 @@
+td {
+    text-align: center;
+}
+
+.large-btn {
+    font-size: 300%;
+}
+
+.table-hover tr:hover td {
+    background-color: #80bdff;
+}
+
+body {
+    background-color: NavajoWhite;
+}
+
+.table-striped-1 > tbody > tr:nth-child(odd) > td,
+.table-striped-1 > tbody > tr:nth-child(odd) > th {
+    background-color: orange;
+}
+
+.table-striped-1 > tbody > tr:nth-child(even) > td,
+.table-striped-1 > tbody > tr:nth-child(even) > th {
+    background-color: yellowgreen;
+}
+
+.table-striped-2 > tbody > tr:nth-child(odd) > td,
+.table-striped-2 > tbody > tr:nth-child(odd) > th {
+    background-color: sandybrown;
+}
+
+.table-striped-2 > tbody > tr:nth-child(even) > td,
+.table-striped-2 > tbody > tr:nth-child(even) > th {
+    background-color: yellowgreen;
+}
+
+.nav-tabs > li > a:hover {
+    background-color: sandybrown;
+    color: #fff;
+    border-color: black;
+    border-radius: 50px;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: sandybrown;
+    color: #fff111;
+    border-color: black;
+    border-radius: 50px;
+}
+
+.nav-tabs {
+    background-color: NavajoWhite;
+    border-color: black;
+    border-radius: 50px;
+}
+
+.breadcrumb {
+    background-color: sandybrown;
+}

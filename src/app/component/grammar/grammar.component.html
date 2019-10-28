@@ -1,0 +1,51 @@
+<div align="center">
+  <h1><span style="font-weight: bolder;">{{word?.word}}</span></h1>
+  <div *ngFor="let grammar of word?.grammarList">
+    <h2>
+      <span *ngIf="grammar.part==='noun'">{{grammar.baseword}} -
+        {{(grammar.gender==="m"?"Masculine":(grammar.gender==="f"?"Female":"Neuter"))}} </span>
+      <span *ngIf="grammar.part==='verb'">&radic;{{grammar.baseword}} cl.{{grammar.clazz}}
+        {{(grammar.voice==="Active"?"P":(grammar.voice==="Middle"?"A":""))}}
+      </span>
+
+    </h2>
+
+    <h6 *ngIf="grammar.part==='noun'" style="color: grey;">
+      <span style="font-weight: bolder;">{{grammar.baseword}}</span>&nbsp;noun&nbsp;{{(grammar.singular!==""?"singular "+grammar.singular+";":"")}}
+      {{(grammar.dual!==""?"dual "+grammar.dual+";":"")}}
+      {{(grammar.plural!==""?"plural "+grammar.plural+";":"")}}
+    </h6>
+    <div *ngIf="grammar.part==='noun'" style='width: 50%'>
+      <table class="table table-striped-2 table-sm">
+        <tr align="center">
+          <th>Declension</th>
+          <th>Singular</th>
+          <th>Dual</th>
+          <th>Plural</th>
+        </tr>
+        <tr *ngFor="let declension of grammar?.declension?.declDevaList">
+          <td><span title={{declension.question}}>{{declension.declRoma}}</span></td>
+          <td><span [style.font-weight]="(word.word===declension.singular?'bold':'normal')">{{declension.singular}}</span></td>
+          <td><span [style.font-weight]="(word.word===declension.dual?'bold':'normal')">{{declension.dual}}</span></td>
+          <td><span [style.font-weight]="(word.word===declension.plural?'bold':'normal')">{{declension.plural}}</span></td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="grammar.part==='verb'" style='width: 50%'>
+      <table class="table table-striped-2 table-sm">
+        <tr align="center">
+          <th>Person</th>
+          <th>Singular</th>
+          <th>Dual</th>
+          <th>Plural</th>
+        </tr>
+        <tr *ngFor="let conjugation of grammar?.conjugationList">
+          <td>{{conjugation.personLat}}</td>
+          <td><span [style.font-weight]="(word.word===conjugation.singular?'bold':'normal')">{{conjugation.singular}}</span></td>
+          <td><span [style.font-weight]="(word.word===conjugation.dual?'bold':'normal')">{{conjugation.dual}}</span></td>
+          <td><span [style.font-weight]="(word.word===conjugation.plural?'bold':'normal')">{{conjugation.plural}}</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
